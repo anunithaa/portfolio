@@ -93,7 +93,7 @@ const timelineData = [
     ],
     links: [
       {
-        url: "https://bit.camp", // Replace with actual Bitcamp URL
+        url: "https://bit.camp",
         text: "Links",
       },
     ],

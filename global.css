@@ -16,7 +16,7 @@ body {
   scroll-behavior: smooth;
 
   background:
-    linear-gradient(rgba(25, 9, 51, 0.8), rgba(25, 9, 51, 0.8) 70%), /* semi-transparent overlay with fade */
+    linear-gradient(rgba(25, 9, 51, 0.8), rgba(25, 9, 51, 0.8) 70%), 
     url('/images/flowers.jpg') top center no-repeat,
     #190933;
 

@@ -1,4 +1,3 @@
-// `pages/_app.js`
 import "/global.css";
 import Head from "next/head";
 <Head>

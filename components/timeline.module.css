@@ -5,7 +5,6 @@
     padding: 40px 0;
   }
   
-  /* Central Timeline Line */
   .timeline::before {
     content: '';
     position: absolute;
@@ -13,11 +12,10 @@
     background: linear-gradient(to bottom, #a7d2ff, #8f95d3);
     top: 0;
     bottom: 0;
-    left: calc(50%); /* Half of 750px */
+    left: calc(50%);
     z-index: 1;
   }  
-  
-  /* Timeline Item Container */
+
   .timelineItem {
     position: relative;
     margin-bottom: 40px;
@@ -34,7 +32,6 @@
     z-index: 2;
     background: transparent;
   
-    /* Glitter emoji star shape */
     clip-path: polygon(
       50% 0%,     /* Top point */
       60% 35%,   /* Upper right curve */
@@ -46,7 +43,6 @@
       40% 35%    /* Upper left curve */
     );
   
-    /* Bright gradient like real glitter */
     background: 
       linear-gradient(
         135deg,
@@ -55,12 +51,10 @@
         #fff 80%
       );
   
-    /* Glitter's signature scattered sparkles */
     box-shadow:
       0 0 12px 3px rgba(167, 210, 255, 0.7),
       0 0 6px 1px rgba(255, 255, 255, 0.9) inset;
   
-    /* Chaotic glitter animation */
     animation: 
       glitter 2s infinite alternate,
       rotate 8s linear infinite;
@@ -76,8 +70,7 @@
     0% { transform: translateX(-50%) rotate(0deg); }
     100% { transform: translateX(-50%) rotate(360deg); }
   }
-  
-  /* Add micro-sparkles */
+
   .timelineDot::before {
     content: '✦';
     position: absolute;
@@ -89,9 +82,8 @@
     filter: drop-shadow(0 0 2px #a7d2ff);
   }
   
-  /* Content Box - Moved further from center */
   .timelineContent {
-    width: 500px; /* Fixed width */
+    width: 500px; 
     padding: 35px;
     background: #442974;
     border-radius: 24px;
@@ -100,7 +92,6 @@
     margin-top: -10px;
   }
   
-  /* Left/Right Positioning with increased spacing */
   .left .timelineContent {
     margin-left: auto;
     margin-right: 700px;
@@ -111,7 +102,6 @@
     margin-right: auto;
     margin-left: 700px;
   }
-  
 
   .right .timelineContent::after {
     content: '';
@@ -137,9 +127,6 @@
     z-index: 1;
   }
 
-  /* components/Timeline.module.css */
-
-/* Title Styling (h3) */
 .timelineTitle {
   margin: 0 0 4px 0;
   margin-top: 50px;
@@ -150,7 +137,6 @@
   letter-spacing: -0.5px;
 }
 
-/* Job Title Styling (h2) */
 .timelineJob {
   margin: 0 0 8px 0;
   font-size: 1.5rem;
@@ -160,7 +146,6 @@
   letter-spacing: 1px;
 }
 
-/* Date Styling */
 .timelineDate {
   margin: 0 0 16px 0;
   font-size: 1rem;
@@ -168,7 +153,6 @@
   color: #8f95d3;
 }
 
-/* Description Styling */
 .timelineDescription {
   color: #e2e2e2;
   font-size: 1.3rem;
@@ -177,7 +161,6 @@
   padding: 0;
 }
 
-/* Description Paragraphs */
 .timelineDescription p {
   margin-bottom: 12px;
 }
@@ -186,7 +169,6 @@
   margin-bottom: 0;
 }
 
-/* Bullet Points */
 .timelineDescription ul {
   padding-left: 1.5rem;
   margin: 0.5rem 0;
@@ -225,7 +207,6 @@
   100% { transform: scale(1.1); opacity: 1; }
 }
 
-
 .timelineLinks {
   display: flex;
   flex-wrap: wrap;
@@ -234,7 +215,6 @@
   padding-top: 20px;
   border-top: 1px solid rgba(143, 149, 211, 0.2);
 }
-
 
 .timelineLink {
   display: inline-flex;
@@ -254,13 +234,11 @@
   border: 1px solid rgba(167, 210, 255, 0.3);
 }
 
-
 .linkIcon {
   font-size: 1.3rem;
   opacity: 0.8;
   transition: all 0.3s ease;
 }
-
 
 .timelineLink:hover {
   background: rgba(74, 111, 165, 0.4);
@@ -273,7 +251,6 @@
   opacity: 1;
   transform: translateX(2px);
 }
-
 
 @media (max-width: 768px) {
   .timelineLinks {
@@ -291,7 +268,6 @@
     font-size: 0.75rem;
   }
 }
-  
 
   @media (max-width: 768px) {
     .timeline::before {

@@ -15,7 +15,6 @@
     transition: transform 0.8s ease-in-out;
   }
   
-  
   .card:hover .inner {
     transform: rotateY(180deg);
   }
@@ -50,7 +49,6 @@
   .language {
     background-color: #f7c4a5;
   }
-    
   
   .front, .back {
     position: absolute;

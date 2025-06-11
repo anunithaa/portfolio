@@ -1,4 +1,3 @@
-// components/Timeline.js
 import React from "react";
 import { motion } from "framer-motion";
 import styles from "./timeline.module.css";
@@ -8,11 +7,10 @@ import { FiExternalLink } from "react-icons/fi";
 const normalizeDescription = (desc) => {
   if (!desc) return [];
   if (Array.isArray(desc)) return desc;
-  return [desc]; // Convert string to single-item array
+  return [desc];
 };
 
 const Timeline = ({ items }) => {
-  // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
     show: {
@@ -60,7 +58,7 @@ const Timeline = ({ items }) => {
               isLeft ? styles.left : styles.right
             }`}
           >
-            {/* Animated content box */}
+            {/* Timeline content */}
             <motion.div
               custom={isLeft}
               variants={itemVariants}
@@ -90,7 +88,7 @@ const Timeline = ({ items }) => {
                       target="_blank"
                       rel="noopener noreferrer"
                       className={styles.timelineLink}
-                      whileHover={{ y: -2 }} // Framer motion hover
+                      whileHover={{ y: -2 }}
                       transition={{ type: "spring", stiffness: 300 }}
                     >
                       <span>{link.text}</span>
