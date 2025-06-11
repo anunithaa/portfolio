@@ -17,11 +17,11 @@ body {
 
   background:
     linear-gradient(rgba(25, 9, 51, 0.8), rgba(25, 9, 51, 0.8) 70%), /* semi-transparent overlay with fade */
-    url('./public/images/flowers.jpg') top center no-repeat,
-    #190933; /* solid background color */
+    url('/images/flowers.jpg') top center no-repeat,
+    #190933;
 
   background-size:
-    100% 50vh, /* overlay covers top half */
+    100% 50vh,
     contain,
     auto;
     overflow-x: hidden;
@@ -33,19 +33,18 @@ body::before {
   top: 0;
   left: 0;
   width: 100%;
-  height: 30vh; /* adjust height for how much image shows */
+  height: 30vh; 
   background: url("/images/flowers.jpg") no-repeat center center / cover;
   z-index: -2;
 }
 
-/* Blurred transition layer */
 body::after {
   content: "";
   position: absolute;
-  top: 120vh; /* start slightly before the end of the image */
+  top: 120vh; 
   left: 0;
   width: 100%;
-  height: 20vh; /* height of transition */
+  height: 20vh;
   background: linear-gradient(
     to bottom,
     rgba(25, 9, 51, 0) 0%,
@@ -75,9 +74,9 @@ img {
 
 code {
   color: #190933;
-  background-color: #f3f8f2; /* optional for contrast */
-  padding: 2px 4px;        /* optional */
-  border-radius: 4px;    /* optional */
+  background-color: #f3f8f2; 
+  padding: 2px 4px;      
+  border-radius: 4px; 
 }
 
 
