@@ -1,7 +1,7 @@
 // components/Timeline.js
 import React from "react";
 import { motion } from "framer-motion";
-import styles from "./Timeline.module.css";
+import styles from "./timeline.module.css";
 import { FaBriefcase } from "react-icons/fa";
 import { FiExternalLink } from "react-icons/fi";
 
