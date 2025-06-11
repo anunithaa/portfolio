@@ -1,0 +1,331 @@
+.timeline {
+    position: relative;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 40px 0;
+  }
+  
+  /* Central Timeline Line */
+  .timeline::before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    background: linear-gradient(to bottom, #a7d2ff, #8f95d3);
+    top: 0;
+    bottom: 0;
+    left: calc(50% + 50px); /* Half of 750px */
+    z-index: 1;
+  }  
+  
+  /* Timeline Item Container */
+  .timelineItem {
+    position: relative;
+    margin-bottom: 40px;
+    min-height: 100px;
+  } 
+
+  .timelineDot {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    background: transparent;
+  
+    /* Glitter emoji star shape */
+    clip-path: polygon(
+      50% 0%,     /* Top point */
+      60% 35%,   /* Upper right curve */
+      100% 50%,  /* Right point */
+      60% 65%,   /* Lower right curve */
+      50% 100%,  /* Bottom point */
+      40% 65%,   /* Lower left curve */
+      0% 50%,    /* Left point */
+      40% 35%    /* Upper left curve */
+    );
+  
+    /* Bright gradient like real glitter */
+    background: 
+      linear-gradient(
+        135deg,
+        #fff 20%,
+        #a7d2ff 50%,
+        #fff 80%
+      );
+  
+    /* Glitter's signature scattered sparkles */
+    box-shadow:
+      0 0 12px 3px rgba(167, 210, 255, 0.7),
+      0 0 6px 1px rgba(255, 255, 255, 0.9) inset;
+  
+    /* Chaotic glitter animation */
+    animation: 
+      glitter 2s infinite alternate,
+      rotate 8s linear infinite;
+  }
+  
+  @keyframes glitter {
+    0% { opacity: 0.8; transform: translateX(-50%) scale(0.9); }
+    50% { filter: brightness(1.5); }
+    100% { opacity: 1; transform: translateX(-50%) scale(1.1); }
+  }
+  
+  @keyframes rotate {
+    0% { transform: translateX(-50%) rotate(0deg); }
+    100% { transform: translateX(-50%) rotate(360deg); }
+  }
+  
+  /* Add micro-sparkles */
+  .timelineDot::before {
+    content: '✦';
+    position: absolute;
+    font-size: 8px;
+    color: white;
+    top: 5px;
+    left: 5px;
+    animation: twinkle 3s infinite;
+    filter: drop-shadow(0 0 2px #a7d2ff);
+  }
+  
+  /* Content Box - Moved further from center */
+  .timelineContent {
+    width: 750px; /* Fixed width */
+    padding: 35px;
+    background: #442974;
+    border-radius: 24px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    position: relative;
+    margin-top: -10px;
+    justify-content: center;
+  }
+  
+  /* Left/Right Positioning with increased spacing */
+  .left .timelineContent {
+    margin-right: 850px; /* Half of 750px */
+    margin-left: auto;
+  }
+  
+  .right .timelineContent {
+    margin-left: 950px; /* Half of 750px */
+  }
+  
+  /* Horizontal Connector Lines - Longer to reach further boxes */
+  .right .timelineContent::after {
+    content: '';
+    position: absolute;
+    width: 100px; /* Matches the margin */
+    height: 10px;
+    background: #8f95d3;
+    top: 30px;
+    left: -100px;
+    z-index: 1;
+  }
+  
+  .left .timelineContent::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 10px;
+    background: #8f95d3;
+    top: 30px;
+    right: -100px;
+    z-index: 1;
+  }
+
+  /* components/Timeline.module.css */
+
+/* Title Styling (h3) */
+.timelineTitle {
+  margin: 0 0 4px 0;
+  margin-top: 50px;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+
+/* Job Title Styling (h2) */
+.timelineJob {
+  margin: 0 0 8px 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #a7d2ff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Date Styling */
+.timelineDate {
+  margin: 0 0 16px 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #8f95d3;
+}
+
+/* Description Styling */
+.timelineDescription {
+  color: #e2e2e2;
+  font-size: 1.3rem;
+  line-height: 1.7;
+  margin: 0;
+  padding: 0;
+}
+
+/* Description Paragraphs */
+.timelineDescription p {
+  margin-bottom: 12px;
+}
+
+.timelineDescription p:last-child {
+  margin-bottom: 0;
+}
+
+/* Bullet Points */
+.timelineDescription ul {
+  padding-left: 1.5rem;
+  margin: 0.5rem 0;
+  list-style-type: none;
+}
+
+.timelineDescription li {
+  position: relative;
+  padding-left: 1rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+.timelineDescription li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #a7d2ff;
+  font-size: 1.5rem;
+  margin-top: 4px;
+  line-height: 1;
+}
+
+.jobIcon {
+  font-size: 1.2rem;
+  color: #a7d2ff;
+  filter: drop-shadow(0 0 2px rgba(255, 215, 0, 0.7));
+  flex-shrink: 0;
+  margin-right: 5px;
+  margin-top: 4px;
+  animation: pulse 2s infinite alternate;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(1.1); opacity: 1; }
+}
+
+/* Links Container */
+.timelineLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(143, 149, 211, 0.2);
+}
+
+/* Link Item */
+.timelineLink {
+  display: inline-flex;
+  align-items: center;
+
+  justify-content: center;
+  position: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: rgba(74, 111, 165, 0.2);
+  color: #a7d2ff;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(167, 210, 255, 0.3);
+}
+
+/* Link Icon */
+.linkIcon {
+  font-size: 1.3rem;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
+/* Hover Effects */
+.timelineLink:hover {
+  background: rgba(74, 111, 165, 0.4);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.timelineLink:hover .linkIcon {
+  opacity: 1;
+  transform: translateX(2px);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .timelineLinks {
+    gap: 8px;
+    margin-top: 15px;
+    padding-top: 15px;
+  }
+  
+  .timelineLink {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+  
+  .linkIcon {
+    font-size: 0.75rem;
+  }
+}
+  
+  /* Responsive Design - Adjusted spacing for mobile */
+  @media (max-width: 768px) {
+    .timeline::before {
+      left: 31px;
+    }
+    
+    .timelineDot {
+      left: 31px;
+    }
+    
+    .timelineContent {
+      width: calc(100% - 120px); /* Adjusted mobile width */
+      margin-left: 100px !important; /* Increased mobile spacing */
+      margin-right: 0 !important;
+      margin-top: 0;
+    }
+    
+    .left .timelineContent::after,
+    .right .timelineContent::after {
+      width: 40px; /* Slightly shorter on mobile */
+      left: -40px !important;
+      right: auto !important;
+    }
+    
+    .verticalConnector {
+      left: 31px;
+    }
+
+    @media (max-width: 768px) {
+        .timelineTitle {
+          font-size: 1.3rem;
+        }
+        .timelineDate {
+          font-size: 0.9rem;
+        }
+        .timelineDescription {
+          font-size: 1rem;
+        }
+      }
+  }
