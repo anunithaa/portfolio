@@ -43,7 +43,7 @@
   text-align: left;
   align-self: flex-start; 
   width: 100%; 
-  max-width: 800px;
+  max-width: 400px;
   padding-top: 1rem;
   margin-left: 15rem;
 }
@@ -93,13 +93,13 @@
 
 .aboutImage {
   flex: 1;
-  max-width: 800px;
+  max-width: 400px;
   height: auto;
   border-radius: 1.2rem;
   box-shadow: 0 0 20px 5px #8f95d3;
   margin-top: 1rem; /* Adjust this value as needed */
   justify-content: space-between; /* Spread text and image apart */
-  margin-right: 5rem;
+  margin-right: 10rem;
   animation: glowPulse 2.5s ease-in-out infinite;
 }
 

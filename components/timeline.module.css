@@ -9,11 +9,11 @@
   .timeline::before {
     content: '';
     position: absolute;
-    width: 10px;
+    width: 5px;
     background: linear-gradient(to bottom, #a7d2ff, #8f95d3);
     top: 0;
     bottom: 0;
-    left: calc(50% + 50px); /* Half of 750px */
+    left: calc(50%); /* Half of 750px */
     z-index: 1;
   }  
   
@@ -91,35 +91,37 @@
   
   /* Content Box - Moved further from center */
   .timelineContent {
-    width: 750px; /* Fixed width */
+    width: 500px; /* Fixed width */
     padding: 35px;
     background: #442974;
     border-radius: 24px;
     box-shadow: 0 3px 10px rgba(0,0,0,0.1);
     position: relative;
     margin-top: -10px;
-    justify-content: center;
   }
   
   /* Left/Right Positioning with increased spacing */
   .left .timelineContent {
-    margin-right: 850px; /* Half of 750px */
     margin-left: auto;
+    margin-right: 700px;
+    
   }
   
   .right .timelineContent {
-    margin-left: 950px; /* Half of 750px */
+    margin-right: auto;
+    margin-left: 700px;
   }
   
-  /* Horizontal Connector Lines - Longer to reach further boxes */
+
   .right .timelineContent::after {
     content: '';
     position: absolute;
-    width: 100px; /* Matches the margin */
-    height: 10px;
+    width: 100px;
+    height: 5px;
     background: #8f95d3;
     top: 30px;
-    left: -100px;
+    right: 100%;
+    left: auto;
     z-index: 1;
   }
   
@@ -127,10 +129,11 @@
     content: '';
     position: absolute;
     width: 100px;
-    height: 10px;
+    height: 5px;
     background: #8f95d3;
     top: 30px;
-    right: -100px;
+    left: 100%;
+    right: auto;
     z-index: 1;
   }
 
@@ -222,7 +225,7 @@
   100% { transform: scale(1.1); opacity: 1; }
 }
 
-/* Links Container */
+
 .timelineLinks {
   display: flex;
   flex-wrap: wrap;
@@ -232,7 +235,7 @@
   border-top: 1px solid rgba(143, 149, 211, 0.2);
 }
 
-/* Link Item */
+
 .timelineLink {
   display: inline-flex;
   align-items: center;
@@ -251,14 +254,14 @@
   border: 1px solid rgba(167, 210, 255, 0.3);
 }
 
-/* Link Icon */
+
 .linkIcon {
   font-size: 1.3rem;
   opacity: 0.8;
   transition: all 0.3s ease;
 }
 
-/* Hover Effects */
+
 .timelineLink:hover {
   background: rgba(74, 111, 165, 0.4);
   color: #ffffff;
@@ -271,7 +274,7 @@
   transform: translateX(2px);
 }
 
-/* Mobile Responsive */
+
 @media (max-width: 768px) {
   .timelineLinks {
     gap: 8px;
@@ -289,7 +292,7 @@
   }
 }
   
-  /* Responsive Design - Adjusted spacing for mobile */
+
   @media (max-width: 768px) {
     .timeline::before {
       left: 31px;
