@@ -38,4 +38,27 @@
   .navLinks li a:hover {
     color: #8f95d3;
   }
+
+  @media (max-width: 768px) {
+    .logo {
+      display: none;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .nav {
+      padding: 1rem; /* tighter padding */
+      justify-content: center; /* center nav links now that logo is gone */
+    }
+  
+    .navLinks {
+      gap: 1rem;
+      font-size: 4rem;
+    }
+  
+    .navLinks li a {
+      font-size: 1.8rem;
+    }
+  }
+  
   

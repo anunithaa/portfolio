@@ -253,58 +253,59 @@
 }
 
 @media (max-width: 768px) {
+  .timeline::before {
+    left: 20px; /* moves center line to left */
+  }
+
+  .timelineDot {
+    left: 20px; /* aligns dots with timeline line */
+  }
+
+  .timelineContent {
+    width: calc(100% - 60px); /* responsive card */
+    margin: 0 0 0 50px !important; /* content to the right of line */
+    padding: 20px;
+  }
+
+  .left .timelineContent,
+  .right .timelineContent {
+    margin-left: 50px !important;
+    margin-right: 0 !important;
+  }
+
+  .left .timelineContent::after,
+  .right .timelineContent::after {
+    display: none; /* hide connector line */
+  }
+
+  .timelineTitle {
+    font-size: 1.4rem;
+  }
+
+  .timelineJob {
+    font-size: 1.2rem;
+  }
+
+  .timelineDate {
+    font-size: 0.9rem;
+  }
+
+  .timelineDescription {
+    font-size: 1rem;
+  }
+
   .timelineLinks {
     gap: 8px;
     margin-top: 15px;
     padding-top: 15px;
   }
-  
+
   .timelineLink {
     padding: 6px 12px;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
   }
-  
+
   .linkIcon {
-    font-size: 0.75rem;
+    font-size: 0.9rem;
   }
 }
-
-  @media (max-width: 768px) {
-    .timeline::before {
-      left: 31px;
-    }
-    
-    .timelineDot {
-      left: 31px;
-    }
-    
-    .timelineContent {
-      width: calc(100% - 120px); /* Adjusted mobile width */
-      margin-left: 100px !important; /* Increased mobile spacing */
-      margin-right: 0 !important;
-      margin-top: 0;
-    }
-    
-    .left .timelineContent::after,
-    .right .timelineContent::after {
-      width: 40px; /* Slightly shorter on mobile */
-      left: -40px !important;
-      right: auto !important;
-    }
-    
-    .verticalConnector {
-      left: 31px;
-    }
-
-    @media (max-width: 768px) {
-        .timelineTitle {
-          font-size: 1.3rem;
-        }
-        .timelineDate {
-          font-size: 0.9rem;
-        }
-        .timelineDescription {
-          font-size: 1rem;
-        }
-      }
-  }

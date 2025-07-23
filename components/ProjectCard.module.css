@@ -7,6 +7,7 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     width: 500px; 
     min-height: 450px;  
+    box-sizing: border-box; 
   }
   
   .projectCard:hover {
@@ -83,4 +84,25 @@
   .githubLink:hover .iconArrow {
     transform: translateX(5px);
   }
+
+  @media (max-width: 600px) {
+    .projectCard {
+      padding: 1.5rem;
+      width: 100%;        /* makes it shrink inside screen */
+      min-height: auto;  /* optional: allow flexible height */
+    }
+  
+    .projectTitle {
+      font-size: 2rem;
+    }
+  
+    .projectDescription {
+      font-size: 1.6rem;
+    }
+  
+    .githubLink {
+      font-size: 1.8rem;
+    }
+  }
+  
   

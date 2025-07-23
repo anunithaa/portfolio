@@ -2,7 +2,6 @@
 
 html,
 body {
-  padding: 0;
   margin: 0;
   padding-top: 2.5rem;
   font-family: 'Poppins', sans-serif;
@@ -78,6 +77,46 @@ code {
   padding: 2px 4px;      
   border-radius: 4px; 
 }
+
+@media (max-width: 768px) {
+  body {
+    background:
+      linear-gradient(rgba(25, 9, 51, 0.85), rgba(25, 9, 51, 0.95)),
+      url('/images/flowers.jpg') no-repeat top center;
+    background-size: 145vh;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+  }
+
+  body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40vh; /* reduced height for mobile */
+    background: url("/images/flowers.jpg") no-repeat top center;
+    background-size: cover;
+    z-index: -2;
+  }
+
+  body::after {
+    content: "";
+    position: bottom;
+    top: 85vh; /* Move the blur closer to top */
+    left: 0;
+    width: 100%;
+    height: 10vh; /* Smaller height for a subtler blur */
+    background: linear-gradient(
+      to bottom,
+      rgba(25, 9, 51, 0) 0%,
+      rgba(25, 9, 51, 0.8) 100%
+    );
+    backdrop-filter: blur(8px); /* Optional: reduce blur strength */
+    z-index: 0;
+  }
+}
+
 
 
 
